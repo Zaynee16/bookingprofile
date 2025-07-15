@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Booking field form</title>
+    <link rel="stylesheet" href="bkff.css"/>
+  </head>
+  <body>
+    <header class="header">
+      <div class="logo">
+        <h2>
+          <a href="http://home.html"
+            ><span class="sp1">Craft</span><span class="sp2">Connect</span></a
+          >
+        </h2>
+      </div>
+      <nav class="navbar">
+        <button class="menu-toggle" id="menu-toggle">&#9776;</button>
+
+        <ul class="nav-links" id="nav-links">
+          <button class="close-toggle" id="close-toggle">X</button>
+
+          <li><a href="about.html">Home</a></li>
+          <li><a href="about.html">Explore Artisans</a></li>
+          <li><a href="about.html">Become an Artisan</a></li>
+          <li><a href="about.html" class="active">About</a></li>
+          <li><a href="about.html">Contact</a></li>
+            </li>
+          </div>
+        </ul>
+      </nav>
+      <div class="user-profile">
+  <img src="profile.jpeg"alt="John's Profile Picture" class="profile-pic" />
+  <span class="status-indicator"></span>
+  <span class="greeting">Hi, John</span>
+  <span class="dropdown-arrow">&#9662;</span>
+
+  <ul class="profile-dropdown">
+    <li><a href="#">My Account</a></li>
+    <li><a href="#">Settings</a></li>
+    <li><a href="#">Log Out</a></li>
+  </ul>
+</div>
+    </header>
+<main class="content-section">
+  <!-- Left side: Breadcrumb + Booking Form -->
+  <div class="form-section">
+    <nav class="breadcrumb">
+      <a href="/">Home</a> &gt;
+      <a href="/search">Search</a> &gt;
+      <a href="/tailors/lagos">Tailors in Lagos</a> &gt;
+      <a href="/profile/bisi-samuel">Bisi Samuel</a> &gt;
+      <span>Profile</span>
+    </nav>
+    <main>
+    <section class="booking-form">
+      <h1>Booking field form</h1>
+      <p>Feel free contact with us, we love to make new partners & friends</p>
+      <form id="bookingForm">
+  <label for="fullName">Full Name</label>
+  <input type="text" id="fullName" name="fullName" placeholder="Enter full name" required />
+
+  <label for="email">E-mail / Username</label>
+  <input type="email" id="email" name="email" placeholder="Enter email address" required />
+
+  <label for="phone">Phone Number</label>
+  <input type="tel" id="phone" name="phone" placeholder="Enter phone number" required />
+
+  <label for="subject">Subject / Inquiry Type</label>
+  <select id="subject" name="subject" required>
+    <option value="">Select Inquiry Type</option>
+    <option value="measurement">Measurement</option>
+    <option value="style">Style Consultation</option>
+    <option value="general">General Inquiry</option>
+  </select>
+
+  <label for="message">Message</label>
+  <textarea id="message" name="message" placeholder="Message Subject" required></textarea>
+
+  <button type="submit">Submit Booking</button>
+</form>
+      <p id="formStatus"></p>
+    </section>
+
+     <!-- Right side: Profile Card -->
+  <aside class="profile-card">
+    <img src="profile.jpeg"alt="CraftConnect Logo" class="profile-logo" />
+    <h2>Bisi Samuel</h2>
+    <p>Professional Tailor</p>
+    <p>⭐ 4.0 (32 reviews)</p>
+    <p>📍 Alimosho, Lagos</p>
+    <a href="/profile/bisi-samuel" class="visit-profile-btn">Visit Profile</a>
+  </aside>
+</main>
+          
+    <script src="bkff.js"></script>
+  </body>
+</html>
+

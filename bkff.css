@@ -1,0 +1,379 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f4f4f4;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  background: ash; 
+  color: #333;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 5rem;
+  background-color: #ffffff;
+  border-bottom: 1px solid #eee;
+  width: 100%;
+  margin-bottom: 10px;
+  font-weight: bolder;
+}
+.sign1 {
+  background-color: #8638e5;
+  border-radius: 4px;
+  padding: 8px;
+  color: white;
+}
+.logo h2 a {
+  text-decoration: none;
+  color: black;
+}
+
+.sp1 {
+  color: #8638e5;
+}
+
+.sp2 {
+  color: green;
+}
+
+.navbar .nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.navbar .nav-links li a {
+  text-decoration: none;
+  color: black;
+  padding: 0.5rem;
+}
+
+.navbar .nav-links li a.active,
+.navbar .nav-links li a:hover {
+  color: #b817b0;
+  border-bottom: 2px solid #ad1ea6;
+  display: block;
+}
+.navbar .nav-links.active {
+  display: flex;
+}
+
+.container {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  max-width: 80%;
+  max-height: 90%;
+  margin: 0 auto;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 20px;
+  gap: 20px;
+}
+
+label {
+  margin-bottom: 0px;
+  text-align: left;
+  display: block;
+}
+
+.submit-btn :hover {
+  background-color: #8638e5;
+}
+
+.options {
+  position: relative;
+  display: flex;
+  gap: 4px;
+  padding: 0 6px;
+  align-items: center;
+  justify-content: space-between;
+  /* width: 100%; */
+}
+
+.user-profile {
+  display: flex;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+  gap: 0.5rem;
+  color: #fff;
+}
+
+.profile-pic {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  position: relative;
+}
+
+.status-indicator {
+  width: 10px;
+  height: 10px;
+  background: #28a745;
+  border: 2px solid white;
+  border-radius: 50%;
+  position: absolute;
+  top: 30px;
+  left: 30px;
+}
+
+.greeting {
+  font-weight: 500;
+  color:#333; 
+  margin-left: 5px;
+  display: inline-block;
+}
+
+.dropdown-arrow {
+  font-size: 1rem;
+}
+
+.profile-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: #fff;
+  color: #333;
+  list-style: none;
+  margin-top: 0.5rem;
+  padding: 0.5rem 0;
+  border-radius: 6px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  display: none;
+  min-width: 120px;
+}
+
+.profile-dropdown li {
+  padding: 0.5rem 1rem;
+}
+
+.profile-dropdown li:hover {
+  background-color: #f2f2f2;
+}
+
+.profile-dropdown a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.breadcrumb {
+  font-size: 0.9rem;
+  margin: 1rem 2rem;
+  color: #555;
+}
+
+.breadcrumb a {
+  text-decoration: none;
+  color: #333;
+}
+
+.breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+.breadcrumb span {
+  font-weight: bold;
+  color: #333;
+}
+
+
+main {
+  display: flex;
+  justify-content: space-around;
+  padding: 2rem;
+}
+
+.content-section {
+  display: flex;
+  padding: 2rem;
+  gap: 2rem;
+  align-items: flex-start; /* ensures top alignment */
+}
+
+.form-section {
+  flex: 2;
+  padding-right: 2rem;
+  position: relative;
+}
+
+.form-section::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 1px;
+  height: 100%;
+  background-color: #ccc;
+}
+
+.profile-card {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  width: 45%;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.breadcrumb {
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  color: #555;
+}
+
+.booking-form {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  width: 100%; /* Make it fill the entire form-section */
+  max-width: 600px; /* Optional: cap it so it doesn't get too wide */
+  margin-right: auto;
+}
+
+.booking-form, .profile-card {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  width: 45%;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.booking-form h1 {
+  margin-bottom: 1rem;
+}
+form label {
+  font-weight: bold;
+  margin-bottom: 0.3rem;
+  display: block;
+  color: #333;
+}
+
+form input, form select, form textarea {
+  width: 100%;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  
+}
+
+form button {
+  padding: 0.8rem 1.2rem;
+  background-color: #ad16bb;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: #d8dcdf;
+}
+
+.profile-card h2 {
+  margin-top: 0;
+}
+.profile-card {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  width: 45%;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.profile-logo {
+  width: 80px;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+.visit-profile-btn {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background: #cdd1d1;
+  color: black;
+  text-decoration: none;
+  border-radius: 4px;
+}
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 1rem;
+  }
+
+  .user-profile {
+    margin-top: 1rem;
+    justify-content: flex-start;
+  }
+
+  .content-section {
+    flex-direction: column;
+    width: 100%;
+    padding: 1rem;
+  }
+
+  .form-section {
+    padding-right: 0;
+    border-right: none;
+  }
+
+  .form-section::after {
+    display: none;
+  }
+
+  .booking-form,
+  .profile-card {
+    width: 100%;
+    padding: 1rem;
+    box-shadow: none;
+  }
+
+  .profile-card {
+    padding-top: 2rem;
+    border-top: 1px solid #ccc;
+  }
+
+  .breadcrumb {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  form input,
+  form select,
+  form textarea {
+    font-size: 1rem;
+  }
+
+  form button {
+    width: 100%;
+  }
+}
+
+
+
+
+
