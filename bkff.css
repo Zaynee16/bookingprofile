@@ -12,7 +12,7 @@ body {
   flex-direction: column;
   margin: 0;
   padding: 0;
-  background: ash; 
+  background: ash;
   color: #333;
 }
 
@@ -20,7 +20,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 5rem;
+  padding: 10px;
   background-color: #ffffff;
   border-bottom: 1px solid #eee;
   width: 100%;
@@ -28,7 +28,7 @@ body {
   font-weight: bolder;
 }
 .sign1 {
-  background-color: #8638e5;
+  background-color:#8638e5;
   border-radius: 4px;
   padding: 8px;
   color: white;
@@ -49,26 +49,23 @@ body {
 .navbar .nav-links {
   list-style: none;
   display: flex;
-  gap: 1rem;
+  gap: 15px;
   align-items: center;
 }
-
 .navbar .nav-links li a {
   text-decoration: none;
   color: black;
   padding: 0.5rem;
 }
-
 .navbar .nav-links li a.active,
 .navbar .nav-links li a:hover {
-  color: #b817b0;
+  color: #2b67f6;
   border-bottom: 2px solid #ad1ea6;
   display: block;
 }
 .navbar .nav-links.active {
   display: flex;
 }
-
 .container {
   display: flex;
   height: 100%;
@@ -82,7 +79,6 @@ body {
   padding: 20px;
   gap: 20px;
 }
-
 label {
   margin-bottom: 0px;
   text-align: left;
@@ -93,16 +89,13 @@ label {
   background-color: #8638e5;
 }
 
-.options {
-  position: relative;
-  display: flex;
-  gap: 4px;
-  padding: 0 6px;
-  align-items: center;
-  justify-content: space-between;
-  /* width: 100%; */
+.toggle-btn {
+  display: none;
+  font-size: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
 }
-
 .user-profile {
   display: flex;
   align-items: center;
@@ -133,7 +126,7 @@ label {
 
 .greeting {
   font-weight: 500;
-  color:#333; 
+  color: #333;
   margin-left: 5px;
   display: inline-block;
 }
@@ -152,7 +145,7 @@ label {
   margin-top: 0.5rem;
   padding: 0.5rem 0;
   border-radius: 6px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   display: none;
   min-width: 120px;
 }
@@ -168,6 +161,15 @@ label {
 .profile-dropdown a {
   text-decoration: none;
   color: inherit;
+}
+.options {
+  position: relative;
+  display: flex;
+  gap: 4px;
+  padding: 0 6px;
+  align-items: center;
+  justify-content: space-between;
+  /* width: 100%; */
 }
 
 .breadcrumb {
@@ -190,27 +192,36 @@ label {
   color: #333;
 }
 
-
 main {
   display: flex;
-  justify-content: space-around;
-  padding: 2rem;
+  justify-content: flex-center;
+  padding: 2rem 4rem;
+  width: 100%;
 }
 
 .content-section {
   display: flex;
-  padding: 2rem;
-  gap: 2rem;
-  align-items: flex-start; /* ensures top alignment */
+  flex-direction: column;
+  position: relative;
+  height: auto;
+  width: 100%;
 }
 
 .form-section {
-  flex: 2;
-  padding-right: 2rem;
+  display: flex;
+  gap: 4em;
   position: relative;
+  padding: 1em 4em;
+
 }
 
-.form-section::after {
+.vertical-line {
+  height: auto;
+  width: 1px;
+  background-color: #ccc;
+}
+
+/* .form-section::before {
   content: '';
   position: absolute;
   top: 0;
@@ -218,6 +229,29 @@ main {
   width: 1px;
   height: 100%;
   background-color: #ccc;
+} */
+
+.profile-card {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  width: 35%;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.breadcrumb {
+  font-size: 18px;
+  color: #555;
+}
+
+.booking-form {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%; /* Make it fill the entire form-section */
+margin-right: auto;
 }
 
 .profile-card {
@@ -225,32 +259,7 @@ main {
   padding: 2rem;
   border-radius: 8px;
   width: 45%;
-  text-align: center;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-}
-
-.breadcrumb {
-  font-size: 0.9rem;
-  margin-bottom: 1rem;
-  color: #555;
-}
-
-.booking-form {
-  background: #fff;
-  padding: 2rem;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  width: 100%; /* Make it fill the entire form-section */
-  max-width: 600px; /* Optional: cap it so it doesn't get too wide */
-  margin-right: auto;
-}
-
-.booking-form, .profile-card {
-  background: #fff;
-  padding: 2rem;
-  border-radius: 8px;
-  width: 45%;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .booking-form h1 {
@@ -263,13 +272,14 @@ form label {
   color: #333;
 }
 
-form input, form select, form textarea {
+form input,
+form select,
+form textarea {
   width: 100%;
   padding: 1rem;
   margin-bottom: 1rem;
   border: 1px solid #ccc;
   border-radius: 4px;
-  
 }
 
 form button {
@@ -294,7 +304,7 @@ form button:hover {
   border-radius: 8px;
   width: 45%;
   text-align: center;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .profile-logo {
@@ -312,17 +322,164 @@ form button:hover {
   text-decoration: none;
   border-radius: 4px;
 }
+
+/* Footer Section  */
+.footer {
+	display: flex;
+	gap: 40px;
+	justify-content: space-around;
+	padding: 40px 65px;
+	background: #232429;
+}
+
+.cta {
+	width: 50%;
+	max-width: 460px;
+	height: 380px;
+	background-color: #353639;
+	color: var(--second-color);
+	border-bottom-left-radius: 20px;
+	border-top-left-radius: 20px;
+}
+
+.cta h2 {
+	padding: 40px;
+	font-size: 32px;
+	font-weight: 600;
+	line-height: 100%;
+	letter-spacing: 0%;
+  color: white;
+}
+
+.cta p {
+	color: #e4dbdb;
+	font-family: Inter;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 145%;
+	letter-spacing: 0%;
+	padding: 0 40px;
+}
+
+.cta-btn {
+	margin: 80px 40px 0 40px;
+  background-color: #ad16bb;
+  color: white;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.prd {
+	display: flex;
+	gap: 20px;
+	font-size: 10px;
+	padding: 40px;
+	margin-bottom: 60px;
+}
+
+.footer-list {
+	list-style: none;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.footer-list a {
+	text-decoration: none;
+	color: #3e3838;
+}
+
+.footer-logo {
+	width: 30%;
+	margin-right: 20px;
+}
+
+.unik {
+	margin-bottom: 15px;
+}
+.sp1 {
+  color:#ad1ea6
+}
+.sp2 {
+  color:#065017;
+}
+
+.unique {
+	display: flex;
+	flex-direction: column;
+	background: #f2e6fc;
+	border-radius: 20px;
+  background-color: #f1a3f8;
+}
+
+.bottom {
+	list-style: none;
+	display: flex;
+	justify-content: space-between;
+	font-size: 10px;
+	padding-left: 40px;
+}
+
+.bottom a {
+	text-decoration: none;
+	color: #3e3838;
+}
+
+.copyright {
+	margin-right: 55px;
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 1.5em;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.close-toggle {
+  display: none;
+}
+
 @media (max-width: 768px) {
   .header {
     flex-direction: column;
     align-items: flex-start;
     padding: 1rem;
+    position: relative;
   }
 
-  .nav-links {
+ .menu-toggle {
+    display: block;
+  }
+.close-toggle {
+  position: absolute;
+  display: flex;
+  right:10px;
+  top: 20px;
+  justify-content: end;
+  font-size: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+  .navbar .nav-links {
+    background: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 4em 0px 40px 0px;
+    width: 100%;
     flex-direction: column;
-    gap: 0.5rem;
-    margin-top: 1rem;
+    align-items: center;
+    display: none;
+  }
+
+  .navbar .nav-links li a.active {
+    display: hidden;
+  }
+  .navbar .nav-links li a {
+    display: hidden;
   }
 
   .user-profile {
@@ -330,31 +487,29 @@ form button:hover {
     justify-content: flex-start;
   }
 
-  .content-section {
+  .content-section,
+  .form-section,
+  .prd,
+  .bottom {
     flex-direction: column;
     width: 100%;
-    padding: 1rem;
+    padding: 6px;
+    gap: 20px;
+    text-align: center;
+    align-items: center;
   }
 
-  .form-section {
-    padding-right: 0;
-    border-right: none;
-  }
-
-  .form-section::after {
+  .vertical-line {
     display: none;
   }
 
-  .booking-form,
   .profile-card {
     width: 100%;
-    padding: 1rem;
-    box-shadow: none;
-  }
-
-  .profile-card {
-    padding-top: 2rem;
-    border-top: 1px solid #ccc;
+    text-align: center;
+    background: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
 
   .breadcrumb {
@@ -366,14 +521,26 @@ form button:hover {
   form select,
   form textarea {
     font-size: 1rem;
+    width: 100%;
   }
 
   form button {
     width: 100%;
   }
+
+  .footer,
+  .cta,
+  .footer-logo,
+  .copyright {
+    width: 100%;
+    text-align: center;
+    padding: 2rem;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cta-btn {
+    margin: 1rem auto 0 auto;
+    display: block;
+  }
 }
-
-
-
-
-
