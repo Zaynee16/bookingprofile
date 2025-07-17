@@ -19,22 +19,23 @@ userProfile.addEventListener("click", () => {
 });
 
 // ✅ Fixed menu toggle function
-function toggleMenu() {
-  const nav = document.getElementById("nav-links");
-  if (nav) {
-    nav.classList.toggle("active");
-  } else {
-    console.error("Could not find element with ID 'nav-links'");
-  }
-}
-const toggle = document.getElementById("menu-toggle");
-const links = document.getElementById("nav-links");
-const closeToggle = document.getElementById("close-toggle");
+document.addEventListener('DOMContentLoaded', () => {
+  const menuToggle = document.querySelector('.menu-toggle');
+  const closeToggle = document.querySelector('.close-toggle');
+  const navLinks = document.querySelector('.nav-links');
 
-toggle.addEventListener("click", () => {
-  links.classList.toggle("active");
-});
+  menuToggle.addEventListener('click', () => {
+    navLinks.classList.add('active');
+  });
 
-closeToggle.addEventListener("click", () => {
-  links.classList.remove("active");
+  closeToggle.addEventListener('click', () => {
+    navLinks.classList.remove('active');
+  });
+
+  // Close menu when clicking a nav link
+  navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('active');
+    });
+  });
 });
